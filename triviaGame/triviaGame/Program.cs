@@ -10,6 +10,7 @@ namespace triviaGame
 
         static void Main(string[] args) 
         {
+            Game();
             Console.WriteLine("Guess a number!");
             bool win = false;
             do
@@ -31,7 +32,7 @@ namespace triviaGame
                     Console.WriteLine("Bingo!!");
                     win = true;
                 }
-
+                
 
             } while (win == false);
             Console.WriteLine("Now guess a color!");
@@ -40,6 +41,7 @@ namespace triviaGame
             {
 
                 //Console.WriteLine("Now guess a color!");  Will repeat inside of the loop 
+
                 var guess2 = Console.ReadLine();
                 string answer2 = "blue";
                 if (guess2 != answer2)
@@ -54,34 +56,61 @@ namespace triviaGame
 
 
             } while (win2 == false);
-            Console.WriteLine("Now what do you think my favorite season is?");
-            bool win3 = false;
-            do
+            static void Seasons()
             {
-                
-                var Seasons = Console.ReadLine();
+                Console.WriteLine("Now what do you think my favorite season is?");
 
-                switch (Seasons)
+                bool win3 = false;
+                do
                 {
-                    case "spring":
-                        Console.WriteLine("You Nailed it! I love spring!");
-                        win3 = true;
-                        break;
-                    case "summer":
-                        Console.WriteLine("A little too hot, try a bit cooler.");
-                        break;
-                    case "fall":
-                        Console.WriteLine("Yes!! I absolutely love fall!");
-                        win3 = true;
-                        break;
-                    case "winter":
-                        Console.WriteLine("Winter is nice but way too cold, try something warmer.");
-                        break;
-                    default:
-                        Console.WriteLine("I didnt quite catch that, try again.");
-                        break;
+                
+                    var Seasons = Console.ReadLine();
+
+                    switch (Seasons)
+                    {
+                        case "spring":
+                            Console.WriteLine("You Nailed it! I love spring!");
+                            win3 = true;
+                            break;
+                        case "summer":
+                            Console.WriteLine("A little too hot, try a bit cooler.");
+                            break;
+                        case "fall":
+                            Console.WriteLine("Yes!! I absolutely love fall!");
+                            win3 = true;
+                            break;
+                        case "winter":
+                            Console.WriteLine("Winter is nice but way too cold, try something warmer.");
+                            break;
+                        default:
+                            Console.WriteLine("I didnt quite catch that, try again.");
+                             break;
+                    }
+                } while (win3 == false);
+            }
+            Console.WriteLine("Black, White, Red?");
+            //bool win4 == false;
+            //do
+            //{
+
+            //}while()
+
+            static void Game()
+            {
+                Console.WriteLine("Would you like to play a little guessing game?");
+                var answer = Console.ReadLine();
+                if (answer == "yes")
+                {
+                    Console.WriteLine("Hell Yeah!! Lets do it!!!");
+                    Seasons(); // Called when the answer is "yes"
                 }
-            } while (win3 == false);
+                else if (answer == "no")
+                {
+                    Console.WriteLine("Well fine then.");
+              
+                    //.exit();
+                }
+            }
 
         }
     }
